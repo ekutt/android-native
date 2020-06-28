@@ -11,6 +11,8 @@ jobs:
 
     steps:
       - checkout
+      - android/install-ndk
+        ndk-version: android-ndk-r19c # or any other version
       - run:
           command: ./gradlew build
           #connectedAndroidTest
