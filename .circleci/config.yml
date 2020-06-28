@@ -40,12 +40,6 @@ jobs:
           - v1-dependencies-
 
     - run: gradle dependencies
-    - run:
-          name: ANDROID_HOME
-          command: echo "sdk.dir="$ANDROID_HOME > local.properties
-    - run:
-          name: ANDROID_NDK_HOME
-          command: echo "ndk.dir="$ANDROID_NDK_HOME > local.properties
     
     - save_cache:
         paths:
