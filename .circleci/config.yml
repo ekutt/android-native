@@ -1,16 +1,15 @@
 version: 2.1
 
 orbs:
-  android: circleci/android@0.2.1
+  circleci-images: circleci/android:api-28-ndk
 
 jobs:
   build:
     #executor: android/android
-    orbs:
-      circleci-images: circleci/android:api-28-ndk
 
     steps:
       - checkout
+
       - run:
           command: ./gradlew build
           #connectedAndroidTest
