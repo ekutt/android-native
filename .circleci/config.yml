@@ -2,7 +2,11 @@
 #
 # Check https://circleci.com/docs/2.0/language-java/ for more details
 #
-version: 2
+version: 2.1
+
+orbs:
+  android: circleci/android@0.2.1
+
 jobs:
   build:
     docker:
@@ -24,7 +28,7 @@ jobs:
   steps:
     - checkout
       
-    - android/install-ndk:
+    - android/install-ndk
         ndk-version: android-ndk-r19c # or any other version
 
 
