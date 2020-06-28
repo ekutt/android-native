@@ -12,7 +12,6 @@ jobs:
       - checkout
 
       - android/install-ndk
-          ndk-version: android-ndk-r21d # or any other version
 
       - run:
           command: ./gradlew build
