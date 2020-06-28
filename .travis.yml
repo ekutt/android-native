@@ -5,6 +5,8 @@ env:
     - ANDROID_API_LEVEL=28
     - ANDROID_BUILD_TOOLS_VERSION=30.0.0
     - ADB_INSTALL_TIMEOUT=8
+    - ANDROID_ABI=armeabi-v7a
+    - ANDROID_TAG=google_apis
 
 android:
  licenses:
@@ -23,15 +25,15 @@ android:
     - extra-google-google_play_services
     - extra-google-m2repository
     - extra-android-m2repository
-    - addon-google_apis-google-28
-    - sys-img-armeabi-v7a-addon-google_apis-google-$ANDROID_API_LEVEL
+    - addon-google_apis-google-$ANDROID_API_LEVEL
+    - sys-img-armeabi-v7a-google_apis-$ANDROID_API_LEVEL
 
 before_script:
   # Prepare pre-accepted licenses to not be promted at installation
   # Following lines have been kept as an example
   #- mkdir -p "$ANDROID_HOME/licenses"
   #- cp ./google-licenses/* "$ANDROID_HOME/licenses/"
-  - echo no | android create avd --force -n test -t android-28 --abi google_apis/armeabi-v7a
+  - echo no | android create avd --force -n test -t android-28 --abi $ANDROID_ABI --tag $ANDROID_TAG
   - emulator -avd test -no-skin -no-audio -no-window &
   - android-wait-for-emulator
   - adb shell input keyevent 82 &
