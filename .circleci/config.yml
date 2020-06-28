@@ -11,7 +11,7 @@ jobs:
     steps:
       - checkout
 
-      - circleci-images/install-android-ndk
+      - android/install-ndk
           ndk-version: android-ndk-r21d # or any other version
 
       - run:
