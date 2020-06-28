@@ -6,13 +6,13 @@ orbs:
 jobs:
   build:
     #executor: android/android
-    docker:
-      - image: circleci/android:api-28-alpha
+    orbs:
+      circleci-images: circleci/android:api-28-ndk
 
     steps:
       - checkout
-      - android/install-ndk
-        ndk-version: android-ndk-r19c # or any other version
+      - circleci-images/install-android-ndk
+          ndk-version: android-ndk-r19c
       - run:
           command: ./gradlew build
           #connectedAndroidTest
