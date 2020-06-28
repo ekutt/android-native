@@ -11,8 +11,6 @@ jobs:
 
     steps:
       - checkout
-      - circleci-images/install-android-ndk
-          ndk-version: android-ndk-r19c
       - run:
           command: ./gradlew build
           #connectedAndroidTest
