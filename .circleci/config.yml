@@ -25,7 +25,7 @@ jobs:
     - checkout
       
     - android/install-ndk:
-      ndk-version: android-ndk-r19c # or any other version
+        ndk-version: android-ndk-r19c # or any other version
 
 
       # Download and cache dependencies
