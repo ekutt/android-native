@@ -6,15 +6,19 @@ orbs:
 jobs:
   build:
     docker:
-      - image: circleci/android:api-28-ndk
+      - image: circleci/android:api-28
 
     steps:
       - checkout
+
+      - circleci-images/install-android-ndk
+          ndk-version: android-ndk-r21d # or any other version
 
       - run:
           command: ./gradlew build
           #connectedAndroidTest
 #################################################
+
       - run:
           name: Setup emulator
           command: sdkmanager "system-images;android-28;default;armeabi-v7a" && echo "no" | avdmanager create avd -n test -k "system-images;android-28;default;armeabi-v7a"
