@@ -27,7 +27,7 @@ jobs:
 
       - run:
           name: Setup emulator
-          command: sdkmanager "system-images;android-28;google_apis;x86_64" && echo "no" | avdmanager create avd -n test -k "system-images;android-28;google_apis;armeabi-v7a"
+          command: sdkmanager "system-images;android-28;google_apis;x86_64" && echo "no" | avdmanager create avd -n test -k "system-images;android-28;google_apis;armeabi-x86_64"
 
       - run:
           name: Launch emulator
