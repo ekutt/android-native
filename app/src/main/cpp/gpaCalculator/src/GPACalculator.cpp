@@ -6,8 +6,7 @@ std::vector<GPACalculator::NameGpaCreditTuple> GPACalculator::calculateGPAs() {
     float total_credits = 0.0f;
     float total_points = 0.0f;
     for_each(nameGradesPair.second.begin(), nameGradesPair.second.end(),
-        [&total_credits, &total_points](const GradeCreditPair& pair)
-        {
+        [&total_credits, &total_points](const GradeCreditPair& pair){
             total_points += pair.first * pair.second;
             total_credits += pair.second;
         });
