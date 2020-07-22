@@ -1,10 +1,8 @@
 #include "GPACalculator.h"
 
-std::vector<GPACalculator::NameGpaCreditTuple> GPACalculator::calculateGPAs()
-{
+std::vector<GPACalculator::NameGpaCreditTuple> GPACalculator::calculateGPAs() {
   std::vector<GPACalculator::NameGpaCreditTuple> resultVec;
-  for(auto& nameGradesPair : studentData)
-  {
+  for(auto& nameGradesPair : studentData) {
     float total_credits = 0.0f;
     float total_points = 0.0f;
     for_each(nameGradesPair.second.begin(), nameGradesPair.second.end(),
@@ -18,13 +16,11 @@ std::vector<GPACalculator::NameGpaCreditTuple> GPACalculator::calculateGPAs()
   return resultVec;
 }
 
-void GPACalculator::addGrade(const std::string& name, float grade, int credits)
-{
+void GPACalculator::addGrade(const std::string& name, float grade, int credits) {
   auto& gradesVec = studentData[name];
   gradesVec.push_back(std::make_pair(grade, credits));
 }
 
-void GPACalculator::clearData()
-{
+void GPACalculator::clearData() {
   studentData.clear();
 }

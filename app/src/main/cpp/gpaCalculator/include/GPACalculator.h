@@ -1,13 +1,12 @@
-#ifndef ARITHMETIC_OPERATIONS_H
-#define ARITHMETIC_OPERATIONS_H
+#ifndef GPACALCULATOR_H
+#define GPACALCULATOR_H
 
 #include <map>
-#include <set>
 #include <string>
 #include <tuple>
 #include <vector>
 
-class GPACalculator{
+class GPACalculator {
 public:
   using NameGpaCreditTuple = std::tuple<std::string, float, int>;
   __attribute__((visibility("default"))) std::vector<NameGpaCreditTuple> calculateGPAs();

@@ -1,4 +1,4 @@
-package ekutt.example.gpacalculator;
+package com.ekutt.example.gpacalculator;
 
 import org.junit.Test;
 
@@ -11,7 +11,7 @@ import static org.junit.Assert.*;
  */
 public class ExampleUnitTest {
     @Test
-    public void grade_addition_isCorrect()
+    public void testAdditionIsCorrect()
     {
         assertEquals(4, 2 + 2);
     }

@@ -1,4 +1,4 @@
-package ekutt.example.gpacalculator;
+package com.ekutt.example.gpacalculator;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -21,8 +21,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -36,8 +35,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void calculateGPAs()
-    {
+    private void calculateGPAs() {
         gpaCalc.addGrade("Susan", 4.0f, 4);
         gpaCalc.addGrade("Susan", 2.5f, 2);
         gpaCalc.addGrade("Susan", 3.0f, 3);
@@ -87,8 +85,7 @@ public class MainActivity extends AppCompatActivity {
                 TableLayout.LayoutParams.FILL_PARENT,
                 TableLayout.LayoutParams.WRAP_CONTENT));
 
-        for(int index=0; index<gpaList.size(); index++)
-        {
+        for(int index=0; index<gpaList.size(); index++) {
             TableRow row = new TableRow(this);
             row.setId(View.generateViewId());
             row.setBackgroundColor(Color.GRAY);
