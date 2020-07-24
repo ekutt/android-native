@@ -93,15 +93,15 @@ public class MainActivity extends AppCompatActivity {
                     TableRow.LayoutParams.MATCH_PARENT,
                     TableRow.LayoutParams.WRAP_CONTENT));
             TextView tvName = new TextView(this);
-            tvName.setText(gpaList.get(index).name);
+            tvName.setText(gpaList.get(index).getName());
             tvName.setPadding(5, 5, 5, 5);
             row.addView(tvName);
             TextView tvCredits = new TextView(this);
-            tvCredits.setText(Integer.toString(gpaList.get(index).totalCredits));
+            tvCredits.setText(Integer.toString(gpaList.get(index).getTotalCredits()));
             tvCredits.setPadding(20, 5, 5, 5);
             row.addView(tvCredits);
             TextView tvGPA = new TextView(this);
-            tvGPA.setText(Float.toString(gpaList.get(index).gpa));
+            tvGPA.setText(Float.toString(gpaList.get(index).getGpa()));
             tvGPA.setPadding(20, 5, 5, 5);
             row.addView(tvGPA);
 
