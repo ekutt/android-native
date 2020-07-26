@@ -1,3 +1,4 @@
 # android-native
 # Example for specific branch:
-[![CircleCI](https://circleci.com/gh/circleci/circleci-docs/tree/GENERAL_REFACTORING_AND_ADD_CI_TESTS.svg?style=svg)](https://circleci.com/gh/circleci/circleci-docs/tree/GENERAL_REFACTORING_AND_ADD_CI_TESTS)
+
+[![CircleCI](https://circleci.com/github/ekutt/android-native.svg?style=svg&circle-token=07631b6619df97cabd2a19f1c29308c5bb343b1f)](Build Status)
