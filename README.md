@@ -5,7 +5,7 @@ The aim of this project is to show how to create Android wrapper for a C++ libra
 Application in this project calculates GPAs based on hard-coded student data. It uses Java code as UI functionality provider and native C++ code for GPA calculation. 
 
 #### Current project status
- ![.github/workflows/build.yml](https://github.com/ekutt/AndroidImageConverter/workflows/.github/workflows/build.yml/badge.svg?branch=master) 
+ ![.github/workflows/build.yml](https://github.com/ekutt/android-native/workflows/.github/workflows/build.yml/badge.svg?branch=master) 
 
 ## Building 
 ### Requirements
