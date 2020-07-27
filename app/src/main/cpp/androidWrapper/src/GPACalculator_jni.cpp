@@ -1,19 +1,17 @@
 #include "GPACalculator_jni.h"
-#include "../gpaCalculator/include/GPACalculator.h"
+#include "GPACalculator.h"
 
 #include <jni.h>
 #include <iostream>
 
-JNIEXPORT jlong JNICALL Java_ekutt_example_gpacalculator_GPACalculator_nativeCreateObject
-  (JNIEnv *, jobject)
-{
+JNIEXPORT jlong JNICALL Java_com_ekutt_example_gpacalculator_GPACalculator_nativeCreateObject
+  (JNIEnv *, jobject) {
     return (jlong) new GPACalculator();
 }
 
-JNIEXPORT jobject JNICALL Java_ekutt_example_gpacalculator_GPACalculator_calculateGPAs
-  (JNIEnv* env, jobject, jlong nativeObjectHandle)
-{
-    jclass resultClass = env->FindClass("ekutt/example/gpacalculator/Result");
+JNIEXPORT jobject JNICALL Java_com_ekutt_example_gpacalculator_GPACalculator_calculateGPAs
+  (JNIEnv* env, jobject, jlong nativeObjectHandle) {
+    jclass resultClass = env->FindClass("com/ekutt/example/gpacalculator/Result");
 
     std::vector<GPACalculator::NameGpaCreditTuple> gparesults =
             ((GPACalculator*)nativeObjectHandle)->calculateGPAs();
@@ -42,9 +40,8 @@ JNIEXPORT jobject JNICALL Java_ekutt_example_gpacalculator_GPACalculator_calcula
     return objarray;
 }
 
-JNIEXPORT void JNICALL Java_ekutt_example_gpacalculator_GPACalculator_addGrade
-  (JNIEnv* env, jobject, jlong nativeObjectHandle, jstring nameStr, jfloat grade, jint credit)
-{
+JNIEXPORT void JNICALL Java_com_ekutt_example_gpacalculator_GPACalculator_addGrade
+  (JNIEnv* env, jobject, jlong nativeObjectHandle, jstring nameStr, jfloat grade, jint credit) {
     jboolean isCopy;
     const char *convertedStr = (env)->GetStringUTFChars(nameStr, &isCopy);
     env->ReleaseStringUTFChars(nameStr, convertedStr);
@@ -58,8 +55,7 @@ JNIEXPORT void JNICALL Java_ekutt_example_gpacalculator_GPACalculator_addGrade
 
 extern "C"
 JNIEXPORT void JNICALL
-Java_ekutt_example_gpacalculator_GPACalculator_clearData(JNIEnv *env, jobject thiz,
-                                                         jlong nativeObjectHandle)
-{
+Java_com_ekutt_example_gpacalculator_GPACalculator_clearData(JNIEnv *env, jobject thiz,
+                                                         jlong nativeObjectHandle) {
     ((GPACalculator*)nativeObjectHandle)->clearData();
 }

@@ -4,4 +4,4 @@ cmake_minimum_required(VERSION 3.10.2)
 add_subdirectory(gpaCalculator)
 
 #Build android wrapper
-add_subdirectory(android_wrapper)
+add_subdirectory(androidWrapper)

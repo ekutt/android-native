@@ -1,4 +1,4 @@
-package ekutt.example.gpacalculator;
+package com.ekutt.example.gpacalculator;
 
 import android.content.Context;
 
@@ -22,20 +22,18 @@ public class GPACalcInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("ekutt.example.gpacalculator", appContext.getPackageName());
+        assertEquals("com.ekutt.example.gpacalculator", appContext.getPackageName());
     }
 
     @Test
-    public void grade_addition_isCorrect()
-    {
+    public void testGradeAdditionIsCorrect() {
         calc.addGrade("James", 3.0f, 4);
         assertEquals(calc.calculateGPAs().get(0).name, "James");
         assertEquals(calc.calculateGPAs().get(0).totalCredits, 4);
     }
 
     @Test
-    public void gpa_calculation_isCorrect()
-    {
+    public void testGpaCalculationIsCorrect() {
         calc.addGrade("James", 3.0f, 4);
         assertEquals(calc.calculateGPAs().size(), 1);
         assertEquals(Double.doubleToLongBits(calc.calculateGPAs().get(0).gpa),
@@ -43,8 +41,7 @@ public class GPACalcInstrumentedTest {
     }
 
     @Test
-    public void clear_data_isCorrect()
-    {
+    public void testClearData() {
         calc.addGrade("James", 3.0f, 4);
         calc.clearData();
         assertEquals(calc.calculateGPAs().size(), 0);
